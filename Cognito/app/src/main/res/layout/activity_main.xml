@@ -55,6 +55,18 @@
         android:layout_height="wrap_content"
         android:text="confirm" />
 
+    <Button
+        android:id="@+id/bt_signin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="confirm" />
+
+    <Button
+        android:id="@+id/bt_FetchUserAttributes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="confirm" />
+
 
 </LinearLayout>
 
