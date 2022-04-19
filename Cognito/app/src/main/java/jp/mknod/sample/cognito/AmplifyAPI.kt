@@ -1,29 +1,27 @@
 package jp.mknod.sample.cognito
 
 import android.content.Context
-
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.amplifyframework.AmplifyException
+import com.amplifyframework.api.aws.AWSApiPlugin
 import com.amplifyframework.auth.AuthChannelEventName
-import com.amplifyframework.auth.AuthException
-import com.amplifyframework.auth.AuthUserAttributeKey
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
-import com.amplifyframework.auth.options.AuthSignUpOptions
-import com.amplifyframework.core.InitializationStatus
-import com.amplifyframework.hub.HubChannel
 import com.amplifyframework.core.Amplify
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.amplifyframework.core.InitializationStatus
+import com.amplifyframework.core.plugin.Plugin
+import com.amplifyframework.hub.HubChannel
 
-object AmplifyAPI : ViewModel() {
+object AmplifyAPI {
 
     private const val TAG = "AmplifyAPI"
 
     fun init(applicationContext: Context): AmplifyAPI {
 
         try {
-            Amplify.addPlugin(AWSCognitoAuthPlugin())   // +auth
+            Amplify.addPlugin(AWSCognitoAuthPlugin())   // auth
+            Amplify.addPlugin(AWSApiPlugin())           // api
+            // Amplify.addPlugin<Plugin<*>>(AWSDataStorePlugin()) // DataStore
+
             Amplify.configure(applicationContext)       // amplify
 
             Log.i(TAG, "Initialized Amplify")

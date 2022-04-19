@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "cognito81cdc905_identitypool_81cdc905",
+    "identityPoolName": "appforandroid7973f018_identitypool_7973f018",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cognit81cdc905",
-    "userPoolName": "cognito81cdc905_userpool_81cdc905",
+    "resourceNameTruncated": "appfor7973f018",
+    "userPoolName": "appforandroid7973f018_userpool_7973f018",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "cognit81cdc905_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "appfor7973f018_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "81cdc905",
-    "resourceName": "cognito81cdc905",
+    "sharedId": "7973f018",
+    "resourceName": "appforandroid7973f018",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "userPoolGroupList": [],

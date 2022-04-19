@@ -49,10 +49,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
 
 
-    // Amplify core dependency
+    // Amplify
 //    implementation 'com.amplifyframework:core:1.35.0'
     implementation 'com.amplifyframework:core-kotlin:0.19.0'
     implementation 'com.amplifyframework:aws-auth-cognito:1.35.0'
+    implementation 'com.amplifyframework:aws-api:1.35.1'
 
     // Support for Java 8 features
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'

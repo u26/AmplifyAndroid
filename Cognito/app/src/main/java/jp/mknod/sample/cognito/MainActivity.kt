@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import com.amplifyframework.auth.AuthUserAttribute
+import com.amplifyframework.datastore.generated.model.Todo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var bt_signin: Button
     lateinit var edit_code: EditText
     lateinit var bt_FetchUserAttributes: Button
-
+    lateinit var bt_addTodo: Button
+    lateinit var bt_getTodo: Button
+    lateinit var bt_deleteTodo: Button
 
     suspend fun showMsgInCoroutine(msg:String){
         withContext(Dispatchers.Main) {
@@ -48,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         bt_confirm = findViewById(R.id.bt_confirm)
         bt_signin = findViewById(R.id.bt_signin)
         bt_FetchUserAttributes = findViewById(R.id.bt_FetchUserAttributes)
+
+        bt_addTodo = findViewById(R.id.bt_addTodo)
+        bt_getTodo = findViewById(R.id.bt_getTodo)
+        bt_deleteTodo = findViewById(R.id.bt_deleteTodo)
 
         // check
         lifecycleScope.launch {
@@ -119,6 +125,38 @@ class MainActivity : AppCompatActivity() {
                     var v = i.value
                     Log.i(TAG, "$k")
                     Log.i(TAG, "$v")
+                }
+            }
+        }
+
+        var no:Int = 0
+        var todo_list = listOf<Todo>()
+
+        bt_addTodo.setOnClickListener{
+            lifecycleScope.launch {
+
+                no++
+                TodoApi.add(
+                    "test$no",
+                    "test$no description",
+                    "test.jpg")
+            }
+        }
+
+        bt_getTodo.setOnClickListener{
+            lifecycleScope.launch {
+                todo_list = TodoApi.get()
+                for( t in todo_list ){
+                    Log.i(TAG, "${t.id} ${t.name}")
+                }
+            }
+        }
+
+        bt_deleteTodo.setOnClickListener{
+            lifecycleScope.launch {
+
+                if( todo_list?.size > 0) {
+                    var ret = TodoApi.delete(todo_list[0])
                 }
             }
         }

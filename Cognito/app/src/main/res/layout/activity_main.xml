@@ -59,14 +59,31 @@
         android:id="@+id/bt_signin"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="confirm" />
+        android:text="SignIn" />
 
     <Button
         android:id="@+id/bt_FetchUserAttributes"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="confirm" />
+        android:text="FetchUserAttributes" />
 
+    <Button
+        android:id="@+id/bt_addTodo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Add Todo" />
+
+    <Button
+        android:id="@+id/bt_getTodo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Get Todo" />
+
+    <Button
+        android:id="@+id/bt_deleteTodo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="delete Todo" />
 
 </LinearLayout>
 

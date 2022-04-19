@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-cognito-dev-182813-authRole",
-      "UnauthRoleArn": "arn:aws:iam::567233534512:role/amplify-cognito-dev-182813-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::567233534512:role/amplify-cognito-dev-182813-authRole",
+      "AuthRoleName": "amplify-appforandroid-dev-180158-authRole",
+      "UnauthRoleArn": "arn:aws:iam::567233534512:role/amplify-appforandroid-dev-180158-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::567233534512:role/amplify-appforandroid-dev-180158-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-cognito-dev-182813-deployment",
-      "UnauthRoleName": "amplify-cognito-dev-182813-unauthRole",
-      "StackName": "amplify-cognito-dev-182813",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:567233534512:stack/amplify-cognito-dev-182813/373d38b0-bbd5-11ec-a992-0e2ebe73586b",
-      "AmplifyAppId": "dna2dkuaukdwn"
+      "DeploymentBucketName": "amplify-appforandroid-dev-180158-deployment",
+      "UnauthRoleName": "amplify-appforandroid-dev-180158-unauthRole",
+      "StackName": "amplify-appforandroid-dev-180158",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:567233534512:stack/amplify-appforandroid-dev-180158/e226fa60-bd63-11ec-a582-0a0c7bc6b89d",
+      "AmplifyAppId": "d1jlkn25c407rk"
     },
     "categories": {
       "auth": {
-        "cognito81cdc905": {}
+        "appforandroid7973f018": {}
       }
     }
   }
