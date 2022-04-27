@@ -9,6 +9,7 @@ import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.core.InitializationStatus
 import com.amplifyframework.core.plugin.Plugin
+import com.amplifyframework.datastore.AWSDataStorePlugin
 import com.amplifyframework.hub.HubChannel
 
 object AmplifyAPI {
@@ -20,7 +21,7 @@ object AmplifyAPI {
         try {
             Amplify.addPlugin(AWSCognitoAuthPlugin())   // auth
             Amplify.addPlugin(AWSApiPlugin())           // api
-            // Amplify.addPlugin<Plugin<*>>(AWSDataStorePlugin()) // DataStore
+            Amplify.addPlugin(AWSDataStorePlugin())     // DataStore
 
             Amplify.configure(applicationContext)       // amplify
 

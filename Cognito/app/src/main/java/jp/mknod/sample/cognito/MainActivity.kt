@@ -10,6 +10,9 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.amplifyframework.datastore.generated.model.Todo
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -28,6 +31,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var bt_addTodo: Button
     lateinit var bt_getTodo: Button
     lateinit var bt_deleteTodo: Button
+    lateinit var bt_add_store: Button
+    lateinit var bt_get_store: Button
+    lateinit var bt_clear_store: Button
+
+    var todos: ArrayList<Todo> =  ArrayList<Todo>();
 
     suspend fun showMsgInCoroutine(msg:String){
         withContext(Dispatchers.Main) {
@@ -54,6 +62,11 @@ class MainActivity : AppCompatActivity() {
         bt_addTodo = findViewById(R.id.bt_addTodo)
         bt_getTodo = findViewById(R.id.bt_getTodo)
         bt_deleteTodo = findViewById(R.id.bt_deleteTodo)
+
+        bt_add_store = findViewById(R.id.bt_add_store)
+        bt_get_store = findViewById(R.id.bt_get_store)
+        bt_clear_store = findViewById(R.id.bt_clear_store)
+
 
         // check
         lifecycleScope.launch {
@@ -160,5 +173,48 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        bt_add_store.setOnClickListener{
+            lifecycleScope.launch {
+                no++
+                TodoApi.addByDatasync(
+                    "test${no+100}",
+                    "test${no+100} description")
+            }
+        }
+
+
+        bt_get_store.setOnClickListener{
+            lifecycleScope.launch {
+                var ret = TodoApi.getByDatasync(todos)
+                if(ret){
+                    for( t in todos ){
+                        Log.i(TAG, "${t.id} ${t.name}")
+                    }
+                }
+            }
+        }
+
+        bt_clear_store.setOnClickListener{
+            lifecycleScope.launch {
+                var ret = TodoApi.clear()
+                if(ret){
+                    Log.i(TAG, "clear")
+                }
+            }
+        }
+
     }
+
+//    class NewsDataSource(
+//        private val refreshIntervalMs: Long = 5000
+//    ) {
+//        val latestNews: Flow<List<Todo>> = flow {
+//            while(true) {
+//
+//                emit(latestNews) // Emits the result of the request to the flow
+//                delay(refreshIntervalMs) // Suspends the coroutine for some time
+//            }
+//        }
+//    }
 }

@@ -1,89 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="40dp"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_username"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Username"
-        android:text="yujiro" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edit_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textVisiblePassword"
-        android:hint="Password"
-        android:text="" />
-    <EditText
-        android:id="@+id/edit_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="E-Mail"
-        android:text="" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="40dp">
+            <EditText
+                android:id="@+id/edit_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:text="yujiro" />
 
-    <Button
-        android:id="@+id/bt_register"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="register" />
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textVisiblePassword"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="E-Mail"
+                android:inputType="textEmailAddress"
+                android:text="" />
+
+            <Button
+                android:id="@+id/bt_register"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="register" />
 
 
-    <EditText
-        android:id="@+id/edit_code"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="Received Code"
-        android:text="" />
+            <EditText
+                android:id="@+id/edit_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Received Code"
+                android:inputType="number"
+                android:text="" />
 
-    <Button
-        android:id="@+id/bt_confirm"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="confirm" />
+            <Button
+                android:id="@+id/bt_confirm"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="confirm" />
 
-    <Button
-        android:id="@+id/bt_signin"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="SignIn" />
+            <Button
+                android:id="@+id/bt_signin"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="SignIn" />
 
-    <Button
-        android:id="@+id/bt_FetchUserAttributes"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="FetchUserAttributes" />
+            <Button
+                android:id="@+id/bt_FetchUserAttributes"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="FetchUserAttributes" />
 
-    <Button
-        android:id="@+id/bt_addTodo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Add Todo" />
+            <Button
+                android:id="@+id/bt_addTodo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Add Todo" />
 
-    <Button
-        android:id="@+id/bt_getTodo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Get Todo" />
+            <Button
+                android:id="@+id/bt_getTodo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Get Todo" />
 
-    <Button
-        android:id="@+id/bt_deleteTodo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="delete Todo" />
+            <Button
+                android:id="@+id/bt_deleteTodo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="delete Todo" />
+
+            <Button
+                android:id="@+id/bt_add_store"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Add DataStore" />
+
+            <Button
+                android:id="@+id/bt_get_store"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Get DataStore" />
+
+            <Button
+                android:id="@+id/bt_clear_store"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Clear DataStore" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
 
